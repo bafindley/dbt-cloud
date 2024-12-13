@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_country
+    description: one record per country
+    columns:
+      - name: country_name
+        description: primary key
+        tests:
+          - unique
+          - not_null
+  - name: stg_country
+    description: this model cleans up country data
+    columns:
+      - name: country_name
+        description: primary key
+        tests:
+          - unique 
+          - not_null 
+  - name: stg_geography
+    description: this model cleans up a country's geography data
+    columns:
+      - name: coordinates
+        description: country geocodes
+        tests:
+          - unique
+        
